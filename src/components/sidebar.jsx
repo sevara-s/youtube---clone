@@ -26,51 +26,60 @@ import {
   sub4,
 } from "../assets/svgs/index.js";
 
+let smth = [
+  {
+    id: 1,
+    img: icon1,
+    name: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    img: icon2,
+    name: "Trending",
+    path: "/trending",
+  },
+  {
+    id: 3,
+    img: icon3,
+    name: "Subscriptions",
+    path: "/sub",
+  },
+];
 const SideBar = () => {
   // links1
-  const [links1, setLinks] = useState([
-    {
-      id: 1,
-      img: icon1,
-      name: "Home",
-    },
-    {
-      id: 2,
-      img: icon2,
-      name: "Trending",
-    },
-    {
-      id: 3,
-      img: icon3,
-      name: "Subscriptions",
-    },
-  ]);
+  const [links1, setLinks] = useState(smth);
   //   links2
   const [links2, setLinks2] = useState([
     {
       id: 1,
       img: icon4,
       name: "Library",
+      path: "/library",
     },
     {
       id: 2,
       img: icon5,
       name: "History",
+      path: "/history",
     },
     {
       id: 3,
       img: icon6,
       name: "Your videos",
+      path: "/yourvid",
     },
     {
       id: 4,
       img: icon7,
       name: "Watch later",
+      path: "/watchlater",
     },
     {
       id: 5,
       img: icon8,
       name: "Liked videos",
+      path: "like",
     },
   ]);
   //   subs
@@ -118,7 +127,7 @@ const SideBar = () => {
   return (
     <>
       {/* sidebar started */}
-      <div className="side_bar w-[240px]   bg-[#212121]">
+      <div className="side_bar w-[240px]  bg-[#212121] sticky left-0 right-0 z-50">
         {/* main logo */}
         <div className="main_logo flex items-center justify-between p-[15px]">
           <img src={catalog} alt="" />
@@ -129,7 +138,11 @@ const SideBar = () => {
         <div className="links1 flex flex-col gap-[20px] p-[15px] border-b border-[#bcbaba]">
           {links1.map((l) => {
             return (
-              <NavLink key={l.id} className="flex items-center gap-[10px]">
+              <NavLink
+                key={l.id}
+                to={l.path}
+                className="flex items-center gap-[10px] w-[240px] h-[40px]"
+              >
                 <img src={l.img} alt="" />
                 <p className="font-[500] text-[14px] text-[#fff]">{l.name}</p>
               </NavLink>
@@ -140,7 +153,11 @@ const SideBar = () => {
         <div className="links1 flex flex-col gap-[20px] p-[15px] border-b border-[#bcbaba]">
           {links2.map((l2) => {
             return (
-              <NavLink key={l2.id} className="flex items-center gap-[10px]">
+              <NavLink
+                key={l2.id}
+                to={l2.path}
+                className="flex items-center gap-[10px] w-[240px] h-[40px]"
+              >
                 <img src={l2.img} alt="" />
                 <p className="font-[500] text-[14px] text-[#fff]">{l2.name}</p>
               </NavLink>
@@ -169,7 +186,7 @@ const SideBar = () => {
           </div>
         </div>
         {/* links3 */}
-        <div className="links1 flex flex-col gap-[20px] p-[15px] border-b border-[#bcbaba]">
+        <div className="links1 flex flex-col gap-[20px] p-[15px] border-b border-[#bcbaba] w-[240px] h-[40px]">
           {links3.map((l3) => {
             return (
               <NavLink key={l3.id} className="flex items-center gap-[10px]">

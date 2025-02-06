@@ -7,9 +7,6 @@ import MainSide from "./components/MainSide.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <div className="wrapper flex">
-      <App />
-      <MainSide />
-    </div>
+    <App />
   </BrowserRouter>
 );
