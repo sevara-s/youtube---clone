@@ -6,3 +6,4 @@ export { default as History } from "./History";
 export { default as Videos } from "./Videos";
 export { default as WatchLater } from "./WatchLater";
 export { default as Like } from "./Like";
+export { default as Notfound } from "./Notfound";

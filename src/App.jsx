@@ -11,6 +11,7 @@ import {
   Trending,
   Videos,
   WatchLater,
+  Notfound,
 } from "./pages/index.js";
 
 import "./App.css";
@@ -31,6 +32,7 @@ function App() {
           <Route element={<Videos />} path="/yourvid" />
           <Route element={<WatchLater />} path="/watchlater" />
         </Route>
+        <Route element={<Notfound />} path="*" />
       </Routes>
     </>
   );
